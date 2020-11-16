@@ -1,15 +1,15 @@
-const  logger = require('sane-node-logger')          // Advanced Logger
+const  logger = require('sane-node-logger')           // Advanced Logger
 const  rssList = require('../data/source');           // Date of RSS sources
-const  cron = require('node-cron');                  // Module for Deamon
-const  {Rss_adapter} = require('./rss_adapter');  // CLASS of RSS parser and adapter
-const  {Proxy}=require('./proxy');                // CLASS of connection to Elastic server with proxy 
+const  cron = require('node-cron');                   // Module for Deamon
+const  {Rss_adapter} = require('./rss_adapter');      // CLASS of RSS parser and adapter
+const  {Proxy}=require('./proxy');                    // CLASS of connection to Elastic server with proxy 
 
 class Deamon{
   constructor(){}
   start(){
     rssList.forEach(element => {                         //Iterate all source of RSS feed
-      element.rssObject = new Rss_adapter(element);      //SET adapter to connect with RSS
-      element.Proxy = new Proxy(element);                //SET proxy for put to Elastic Server
+      element.rssObject = new Rss_adapter(element);      //SET adapter object to connect with RSS
+      element.Proxy = new Proxy(element);                //SET proxy object for put data to Elastic Server
       (async ()=>{
         await element.Proxy.getLastDate();
         startDeamon(element);
