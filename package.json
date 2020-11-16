@@ -4,11 +4,13 @@
   "description": "test elastic",
   "main": "index.js",
   "dependencies": {
+    "@elastic/elasticsearch": "^7.10.0",
     "array.prototype.flatmap": "^1.2.3",
     "elasticsearch": "^16.7.1",
     "express": "^4.17.1",
     "node-cron": "^2.0.3",
     "rss-parser": "^3.9.0",
+    "sane-node-logger": "^1.0.1",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {},
