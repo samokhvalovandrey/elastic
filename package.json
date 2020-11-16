@@ -1,0 +1,28 @@
+{
+  "name": "elastic",
+  "version": "1.0.0",
+  "description": "test elastic",
+  "main": "index.js",
+  "dependencies": {
+    "array.prototype.flatmap": "^1.2.3",
+    "elasticsearch": "^16.7.1",
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3",
+    "rss-parser": "^3.9.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samokhvalovandrey/elastic.git"
+  },
+  "author": "Samokhvalov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samokhvalovandrey/elastic/issues"
+  },
+  "homepage": "https://github.com/samokhvalovandrey/elastic#readme"
+}
