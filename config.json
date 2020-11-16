@@ -1,0 +1,11 @@
+{
+    "elasticConfig":{
+        "cloud": {
+            "id": "elastic-search:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvJGI4NDEyZjg1ZjA1YzQxMjU4MDZjNGQzNjBjNjc5YmRmJGQzZmMwNzI5NTkwODRjY2U4ZGNhZjJlZWFmM2JkOTZl"
+        },
+        "auth": {
+            "username": "elastic",
+            "password": "bvufWNn5utvbT3d8z3Lkd6bh"
+        }
+    }
+}

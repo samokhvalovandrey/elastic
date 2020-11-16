@@ -1,0 +1,53 @@
+[
+    {
+        "name":"hackerNews",
+        "url":"https://hnrss.org/newest?points=10",
+        "active":true,
+        "rss":{
+            "index":"rss_feed",
+            "props":[
+                    {"name":"title", "type": "text", "rss_prop":"title"},
+                    {"name":"timestamp", "type": "Date", "rss_prop":"isoDate"},
+                    {"name": "link","type": "text", "rss_prop":"link"},
+                    {"name": "creator", "type": "text", "rss_prop":"creator"},
+                    {"name": "points","type":"integer"},
+                    {"name":"comments","type": "integer"}
+            ]
+        },
+        "log":{
+            "index":"rss_logs",
+            "props":[
+                {"name": "url","type":"text"},
+                {"name": "request_time","type":"Date"},
+                {"name": "amount_returned","type": "integer"},
+                {"name": "success","type": "text"}            
+            ]
+        }   
+    },
+    {
+        "name":"reddit",
+        "url":"https://www.reddit.com/.rss",
+        "active":false,
+        "rss":{
+            "index":"rss_feed_reddit",
+            "props":[
+                {"name":"title", "type": "text", "rss_prop":"title"},
+                {"name":"timestamp", "type": "Date", "rss_prop":"isoDate"},
+                {"name": "link","type": "text", "rss_prop":"link"},
+                {"name": "creator", "type": "text", "rss_prop":"author"},
+                {"name": "points","type":"integer"},
+                {"name":"comments","type": "integer"}
+            ]
+        },
+        "log":{
+            "index":"rss_logs",
+            "props":[
+                {"name": "url","type":"text"},
+                {"name": "request_time","type":"Date"},
+                {"name": "amount_returned","type": "integer"},
+                {"name": "success","type": "text"}            
+            ]
+        }   
+   }
+]
+
