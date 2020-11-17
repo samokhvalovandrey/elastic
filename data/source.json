@@ -27,7 +27,7 @@
     {
         "name":"reddit",
         "url":"https://www.reddit.com/.rss",
-        "active":false,
+        "active":true,
         "rss":{
             "index":"rss_feed_reddit",
             "props":[

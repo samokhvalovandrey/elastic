@@ -1,3 +1,4 @@
+const  logger = require('sane-node-logger')           // Advanced Logger
 const Parser = require('rss-parser');
 const parser = new Parser();
 const fs = require("fs");
@@ -23,9 +24,8 @@ class Rss_adapter{
         });
         return responce;
     }
-   
-    async getRssNews(){ // COMMON Method to return responce
-        let responce ={ //Object for responce data
+    async getRssNews(){                                     // COMMON Method to return responce
+        let responce ={                                     //Object for responce data
             RSS_FEED:[],
             RSS_LOGS:[{
                 url: this.data.url, 
@@ -35,17 +35,18 @@ class Rss_adapter{
             }],
             result:"success"
         };
-        try{ //Start process 
+        try{                                                     //Start process 
             let feed = await parser.parseURL(this.data.url);
-            console.log(feed.title);
+            logger.log(feed.title);
             feed.items.forEach((item,i)=>{
                 let newItem = this.temp(item,i)
                 responce.RSS_FEED.push(newItem);
             });
+            responce.RSS_LOGS[0].amount_returned = feed.items.length;
             return responce;
         }catch(err){
-            console.log(err);
-            responce[0].RSS_LOGS.status = 'failure';
+            console.log('adpter ERROR',err);
+            responce.RSS_LOGS[0].status = 'failure';
             responce.result = 'failure'
             return responce;
         }

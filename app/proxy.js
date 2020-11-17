@@ -26,7 +26,7 @@ class Proxy{                                    //Class Proxy Pattern with aim p
           logger.log(err);
       }
   }
-  async setLastDate(){
+  async setLastDate(){                          //Set LAST maximum Date of RSS feed
     let obj = this;
       try{
         let lastDate = await readFileAsync(lastDateFileName);
@@ -82,7 +82,11 @@ class Proxy{                                    //Class Proxy Pattern with aim p
     if (revData.length>0){
         let elasticInstance = new Elastic(this.rss_index, map);
         (async ()=>{
-            await elasticInstance.putRssFeed(revData);
+            try{
+                await elasticInstance.putRssFeed(revData);
+            }catch(err){
+                logger.log(err);
+            }
         })();
     }else{
         logger.log('RSS Data is OLD');
@@ -97,7 +101,11 @@ class Proxy{                                    //Class Proxy Pattern with aim p
     });
     let elasticInstance = new Elastic(this.log_index, map);
     (async ()=>{
-        await elasticInstance.putRssFeed(data);
+        try{
+            await elasticInstance.putRssFeed(data);
+        }catch(err){
+            logger.log(err);
+        }
     })();
     
   }
